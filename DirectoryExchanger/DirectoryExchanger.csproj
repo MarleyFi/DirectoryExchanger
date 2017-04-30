@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E98891A1-2597-4436-A974-66A6233B569E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DirectoryExchanger</RootNamespace>
+    <AssemblyName>DirectoryExchanger</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>veröffentlichen\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Circulation.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataStore.cs" />
+    <Compile Include="DoubleFilePair.cs" />
+    <Compile Include="FolderBrowserDialogEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrmAdvancedFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdvancedFilter.Designer.cs">
+      <DependentUpon>FrmAdvancedFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDirectoryExchanger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDirectoryExchanger.Designer.cs">
+      <DependentUpon>FrmDirectoryExchanger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDuplicates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDuplicates.Designer.cs">
+      <DependentUpon>FrmDuplicates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmShowTransferData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShowTransferData.Designer.cs">
+      <DependentUpon>FrmShowTransferData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSort.Designer.cs">
+      <DependentUpon>FrmSort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Supporter.cs" />
+    <EmbeddedResource Include="FrmAdvancedFilter.resx">
+      <DependentUpon>FrmAdvancedFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDirectoryExchanger.resx">
+      <DependentUpon>FrmDirectoryExchanger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDuplicates.resx">
+      <DependentUpon>FrmDuplicates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShowTransferData.resx">
+      <DependentUpon>FrmShowTransferData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSort.resx">
+      <DependentUpon>FrmSort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FolderOpened.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Card_file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FolderClosed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exchange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FolderSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TickSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Write.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Circulation.ico" />
+    <None Include="Resources\TinyList24.png" />
+    <None Include="Resources\List24.png" />
+    <None Include="Resources\Eye.png" />
+    <None Include="Resources\FolderUp32.png" />
+    <None Include="Resources\Subfolders16.png" />
+    <None Include="Resources\Search16.png" />
+    <None Include="Resources\FilterFlat128.png" />
+    <None Include="Resources\Shutdown128.png" />
+    <None Include="Resources\Help128.png" />
+    <None Include="Resources\Search128.png" />
+    <None Include="Resources\Folder128.png" />
+    <None Include="Resources\File128.png" />
+    <None Include="Resources\FilesBlank256.png.png" />
+    <None Include="Resources\FilesBlank128.png.png" />
+    <None Include="Resources\Denied.png" />
+    <None Include="Resources\Sort.png" />
+    <None Include="Resources\FilesBlank.png.png" />
+    <None Include="Resources\Subfolders.png" />
+    <None Include="Resources\Compare.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\RefreshColor.png" />
+    <None Include="Resources\Circulation.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
